@@ -1,18 +1,18 @@
 body{
-    background-color: lightblue;
-    color: maroon;
+    background-color: rgb(214, 237, 247);
+    color: rgb(21, 18, 18);
     font-family: Arial;
     margin: 0px;
     a { text-decoration: none; }
 }
 header{
-    background-color:Snow;
+    background-color:rgb(255, 255, 255);
     color: rgb(64, 2, 64) ;
     font-family: arial;
     margin: 0px;
 }
 footer{
-    background-color:Snow;
+    background-color:rgb(255, 255, 255);
     color: rgb(64, 2, 64) ;
     font-family: arial;
     margin: 0px;
