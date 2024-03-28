@@ -49,3 +49,12 @@ div.menu:hover {
     background-color: #ffffff9e;
     box-shadow: 0 0 20px #ba060630;
 }
+footer{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+main{
+    margin: 10px 20px 110px;
+}
