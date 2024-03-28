@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Половко Милана Андреевна. Лабораторная 4</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" href="../favicon.ico">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-16x16.png">
+    <style>
+        div{
+            width: 300px;
+            height: 70px;
+            background-color: white;
+            border: 1px dotted darkgreen;
+            margin: 15px;
+            line-height:70px;
+            text-align: center;
+            
+        }
+        .position-relative{
+            position: relative;
+            left: 140px;
+            top: -128px;
+            z-index: -1;
+
+        }
+        div:hover+.position-relative{
+            z-index: 1;
+        }
+        
+        .position-absolute{
+            position: absolute;
+            left: 300px;
+        }   
+        .position-absolute:hover{
+            width: 350px;
+            height: 90px;
+            line-height: 90px;
+            font-size: 20px;
+            background-color: coral;
+            box-shadow: 0px 5px 20px rgb(94, 68, 35);
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная 4
+    </header>
+
+    <main>
+       <div>static</div>
+       <div>static</div>
+       <div class="position-relative">relative</div>
+       <div>static</div>
+       <div>static</div>
+       <div class="position-absolute">absolute</div>
+       <div>static</div>
+       <div>static</div>
+       <div>static</div>
+       <div>static</div>
+
+    </main>
+
+    <footer>
+        &copy; Половко Милана, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
