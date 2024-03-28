@@ -39,3 +39,13 @@ a:active {
     color:black;
     opacity: 0.3;
 }
+div.menu {
+    border: 7px solid #eca90e;
+    border-radius: 5px;
+    width: 300px;
+    margin: 0 auto;
+}
+div.menu:hover {
+    background-color: #ffffff9e;
+    box-shadow: 0 0 20px #ba060630;
+}
