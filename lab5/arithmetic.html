@@ -16,6 +16,14 @@
             let result=a+b;
             alert('Сумма ' + a + ' и ' + b + ' равна ' + result);
         }
+        function showAuthor(){
+            let author='Автор страницы:\nПоловко Милана Андреевна';
+            alert(author);
+        }
+        function showGreet(){
+            let greeting='Приветствую вас на моей странице!\n"Если жизнь дает лимоны - делай лимонад"';
+            alert(greeting);
+        }
     </script>
     <style>
         .message{
@@ -33,20 +41,27 @@
             padding: 7px 5px 0 1px;
             cursor: pointer; 
         }
+        header{
+            cursor: pointer;
+        }
+        footer{
+            cursor: pointer;
+        }
+      
     </style>
 </head>
 
 <body>
-    <header>
+    <header onclick="showAuthor()">
         НГТУ, ФБ, Лабораторная 5
     </header>
 
     <main>
     <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
-    <div class="message">Узнать, кто автор страницы</div>
+    <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
     </main>
 
-    <footer>
+    <footer ondblclick="showGreet()">
         &copy; Половко Милана, ФБИ-21, 2 курс, 2024
     </footer>
 </body>
