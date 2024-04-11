@@ -54,6 +54,13 @@
             let greeting='Приветствую вас на моей странице!\n"Если жизнь дает лимоны - делай лимонад"';
             alert(greeting);
         }
+        function changeOutput(buttonNum,backColor,textColor, borderColor){
+            let output=document.getElementById('output');
+            output.innerHTML='Нажата кнопка '+buttonNum;
+            output.style.backgroundColor=backColor;
+            output.style.color=textColor;
+            output.style.border=borderColor;
+        }
     </script>
     <style>
         .message{
@@ -79,7 +86,11 @@
         footer{
             cursor: pointer;
         }
-      
+        #output{
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
+        }
     </style>
 </head>
 
@@ -96,6 +107,13 @@
         <div class="message" onclick="showDif()">Найти разность чисел</div>
         <div class="message" onclick="showComp()">Найти произведение</div>
         <div class="message" onclick="showDiv()">Найти деление</div>
+        <div>
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'red','yellow','red')">
+            <input type="button" value="Кнопка 2" onclick="changeOutput(2,'black','lime','black')">
+            <input type="button" value="Кнопка 3" onclick="changeOutput(3,'black','lime','black')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4,'black','lime','black')">
+        </div>
+        <div id="output"></div>
     </main>
 
     <footer ondblclick="showGreet()">
