@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Половко Милана Андреевна</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" href="../favicon.ico">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-16x16.png">
+    <script>
+        function Block(element){
+            element.style.opacity= 0;
+            element.style.transition='1s';
+            element.style.backgroundcolor.opacity=0;
+            element.style.width=0;
+            element.style.height=0;
+            element.style.fontSize=0;       
+        }
+        function cancel(){
+            let circle1=document.getElementsByTagName('label');
+            for(let circle of circle1){
+                circle.style.width='100px';
+                circle.style.height='100px';
+                circle.style.fontSize= '40px';
+                circle.style.opacity= 1;
+            } 
+        }
+    </script>
+    <style>
+       label{
+            width: 100px; 
+            height: 100px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 40px;
+            line-height:90px; 
+            font-weight: bold;
+            position: absolute;
+        
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная 5
+    </header>
+
+    <main> 
+        
+        <label style="background-color: rgba(255, 0, 0, 0.707);left: 200px; top: 220px;" onclick="Block(this)" id="circle1">1</label>
+        <label style="background-color: rgba(152, 33, 199, 0.556);left: 350px; top: 200px;" onclick="Block(this)" id="circle2">2</label>
+        <label style="background-color: rgb(199, 181, 105);left: 530px; top: 500px;"onclick="Block(this)" id="circle3">3</label>
+        <label style="background-color: rgba(220, 62, 96, 0.955);left: 210px; top: 570px;"onclick="Block(this)" id="circle4">4</label>
+        <label style="background-color: rgba(245, 197, 2, 0.871);left: 700px; top: 220px;"onclick="Block(this)" id="circle5">5</label>
+        <label style="background-color: rgba(18, 93, 255, 0.549);left: 500px; top: 300px;"onclick="Block(this)" id="circle6">6</label>
+        <label style="background-color: rgba(130, 197, 37, 0.85);left: 300px; top: 360px;"onclick="Block(this)" id="circle7">7</label>
+        <label style="background-color: rgba(213, 244, 8, 0.857);left: 530px; top: 100px;"onclick="Block(this)" id="circle8">8</label>
+        <label style="background-color: rgb(247, 250, 250);left: 900px; top: 270px;"onclick="Block(this)" id="circle9">9</label>
+        <label style="background-color: rgba(49, 208, 223, 0.829);left: 700px; top: 330px;"onclick="Block(this)" id="circle10">10</label>
+   
+        <input type="button" value="Отмена" onclick="cancel()">
+        
+    </main>
+
+    <footer>
+        &copy; Половко Милана, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
