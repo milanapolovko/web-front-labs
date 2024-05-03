@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Половко Милана Андреевна</title>
+    <link rel="stylesheet" href="../main.css"> 
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-32x32.png">
+    <link rel="icon" href="favicon-16x16.png">
+    <script>
+        function filter(){
+            let color=document.getElementById('wear-color').value;
+            let type=document.getElementById('wear-type').value;
+            let wear=document.getElementById('wear');
+
+            if(color=='Красный' && type=='Футболка'){
+                wear.src='красная футболка.jpg';
+            }
+            else if(color=='Белый' && type=='Футболка'){
+                wear.src='белая футболка.jpg';
+            }
+            else if(color=='Черный' && type=='Футболка'){
+                wear.src='черная футболка.jpg';
+            }
+            else if(color=='Белый' && type=='Поло'){
+                wear.src='белое поло.jpg';
+            }
+            else if(color=='Черный' && type=='Поло'){
+                wear.src='черное поло.jpg';
+            }
+            else if(color=='Красный' && type=='Поло'){
+                wear.src='красное поло.jpg';
+            }
+            else if(color=='Белый' && type=='Майка'){
+                wear.src='белая майка.jpg';
+            }
+            else if(color=='Черный' && type=='Майка'){
+                wear.src='черная майка.jpg';
+            }
+            else if(color=='Красный' && type=='Майка'){
+                wear.src='красная майка.jpg';
+            }
+        }
+    </script>
+</head>
+<style>
+    img{
+        width: 300px;
+        margin-top: 5px;
+    }
+    select{
+        margin-top: 3px;
+    }
+</style>
+<body>
+    <header> НГТУ, ФБ, Лабораторная работа</header>
+    <main>
+        <div>
+            Цвет одежды:
+            <select id="wear-color">
+                <option>Красный</option>
+                <option>Белый</option>
+                <option>Черный</option>
+            </select><br>
+
+            Тип одежды:
+            <select id="wear-type">
+                <option>Футболка</option>
+                <option>Поло</option>
+                <option>Майка</option>
+            </select><br>
+
+            <button onclick="filter()">ОК</button><br>
+
+            <img id="wear">
+        </div>
+    </main>
+    <footer> &copy;Милана Половко, ФБИ-21, 2 курс, 2024</footer>
+</body>
+</html>
