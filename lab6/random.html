@@ -48,6 +48,21 @@
             number=Math.floor(Math.random()*100)+1;    
             document.getElementById('result').innerHTML = '';
         }
+        function openRules(){
+            let rules=document.getElementsByClassName('rules');
+            for (let i = 0; i < rules.length; i++) {
+                rules[i].style.display = 'block';
+        }
+            document.getElementById('open').style.display='none';
+            document.getElementById('close').style.display='block';
+        }
+        function closeRules(){
+            let rules=document.getElementsByClassName('rules');
+            for (let i = 0; i < rules.length; i++) {
+                rules[i].style.display = 'none'; }
+            document.getElementById('close').style.display='none';
+            document.getElementById('open').style.display='block';
+        }
     </script>
 </head>
 <style>
@@ -58,8 +73,19 @@
         text-align: center;
         padding: 10px ;
         width: 500px;
-       border-color: rgba(220, 20, 60, 0.806);
-       color: rgb(103, 6, 32);
+        border-color: rgba(220, 20, 60, 0.806);
+        color: rgb(103, 6, 32);
+    }
+    .help{
+        border: 1px solid;
+        border-radius: 30px;
+        text-align:justify;
+        padding: 20px 10px 10px 30px;
+        width: 500px;
+        border-color: rgba(255, 255, 255, 0.818);
+        background-color: rgba(255, 255, 255, 0.777);
+        color: rgb(218, 14, 14);
+        line-height:21px;
     }
 </style>
 <body>
@@ -92,6 +118,20 @@
             </div>
             <div>
                 <button onclick="again()">Сыграть еще раз</button>
+            </div>
+        </div>
+        <div class="help">
+            <button onclick="openRules()" id="open">Показать правила игры</button>
+            <button onclick="closeRules()" id="close" style="display: none;">Скрыть правила игры</button>
+            <div class="rules" style="display: none;">
+                <ol type="I">
+                    <li>Сначала нажмите на кнопку "Сыграть в игру"</li>
+                    <li>Введите число от 1 до 100 включительно</li>
+                    <li>Нажмите кнопку "угадать" </li>
+                    <li>При вводе других символов или числа меньше 1/ больше 100, программа выдаст соотвествующее сообщение</li>
+                    <li>Вводите число, пока не угадаете</li>
+                    <li>При желании, можно сыграть еще раз при нажатии на кнопку "сыграть еще раз"</li>
+                </ol>
             </div>
         </div>
     </main>
