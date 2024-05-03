@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Половко Милана Андреевна</title>
+    <link rel="stylesheet" href="../main.css"> 
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-32x32.png">
+    <link rel="icon" href="favicon-16x16.png">
+    <script>
+        function changeColor(div){
+            if(div.style.backgroundColor=='yellowgreen'){
+                div.style.backgroundColor='red'; 
+                document.getElementById('color-name').innerHTML='красный'; 
+                document.querySelector('.text').style.color='black'; 
+            }
+            else if(div.style.backgroundColor=='red' ){
+                div.style.backgroundColor='yellow';
+                document.querySelector('.text').style.color='black'; 
+                document.getElementById('color-name').innerHTML='желтый';
+            }
+            else if(div.style.backgroundColor=='yellow'){
+                div.style.backgroundColor='black';
+                document.querySelector('.text').style.color='white'; 
+                document.getElementById('color-name').innerHTML='черный';
+            }
+            else if(div.style.backgroundColor=='black'){
+                div.style.backgroundColor='lightskyblue';
+                document.querySelector('.text').style.color='black'; 
+                document.getElementById('color-name').innerHTML='голубой';
+            }
+            else if(div.style.backgroundColor=='lightskyblue'){
+                div.style.backgroundColor='white';
+                document.querySelector('.text').style.color='black'; 
+                document.getElementById('color-name').innerHTML='белый';
+            }
+            else {
+                div.style.backgroundColor='yellowgreen';
+                document.getElementById('color-name').innerHTML='зеленый';
+                document.querySelector('.text').style.color='darkgreen'; 
+            }
+        }
+       
+    </script>
+</head>
+<style>
+    .color{
+        border: 2px solid;
+        border-color: rgb(37, 111, 10);
+        background-color: yellowgreen;
+        width: 300px;
+        height: 300px;  
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        cursor: pointer;}
+      
+    .text{
+        position:absolute; 
+        top: 40%;
+        text-align: center; 
+        color: darkgreen;
+        font-weight: bold;
+       }
+</style>
+
+<body>
+    <header> НГТУ, ФБ, Лабораторная работа</header>
+    <main>
+        <div class="color" ondblclick="changeColor(this)">
+            <div class="text">
+                Цвет: <span id="color-name">зеленый</span><br>
+                Сделай двойной щелчок, чтобы сменить.
+            </div>
+        </div>
+    </main>
+    <footer> &copy;Милана Половко, ФБИ-21, 2 курс, 2024</footer>
+</body>
+</html>
+
+
+
+
+
+
