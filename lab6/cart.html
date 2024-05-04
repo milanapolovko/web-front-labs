@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Половко Милана Андреевна</title>
+    <link rel="stylesheet" href="../main.css"> 
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-32x32.png">
+    <link rel="icon" href="favicon-16x16.png">
+    <script>
+    function Sum(){
+        let inputA=document.getElementById('numberA');
+        let inputB=document.getElementById('numberB');
+        let inputC=document.getElementById('numberC');
+        let inputD=document.getElementById('numberD');
+        let inputE=document.getElementById('numberE');
+        let inputF=document.getElementById('numberF');
+        let inputG=document.getElementById('numberG');
+        let input=document.getElementById('userBalans');
+        let message=document.getElementById('error');
+
+        let a=parseInt(inputA.value) || "";
+        let b=parseInt(inputB.value) || "";
+        let c=parseInt(inputC.value) || "";
+        let d=parseInt(inputD.value) || "";
+        let e=parseInt(inputE.value) || "";
+        let f=parseInt(inputF.value) || "";
+        let g=parseInt(inputG.value) || "";
+        let userBalance=parseInt(input.value);
+        
+        let result=90*a+50*b+150*c+67*d+100*e+85*f+60*g;
+        let output=document.getElementById('output');
+
+        if(a<0 || b<0 || c<0 || d<0 || e<0 || f<0 || g<0){
+            message.innerHTML='Значение должно быть положительным числом';
+            output.innerHTML="";
+        }
+        else if(a=="" && b=="" && c=="" && d=="" && e=="" && f=="" && g==""){
+            message.innerHTML='Введите хотя бы один товар';
+            output.innerHTML="";
+        }
+        else if(a=="" || b=="" || c=="" || d=="" || e=="" || f=="" || g==""){
+            if(userBalance<result){
+                message.innerHTML='Недостаточно средств';
+                output.innerHTML=result+" p";
+            }
+            else if(userBalance>=result){
+                message.innerHTML='Оформление прошло успешно';
+                output.innerHTML=result+" p";
+            }
+        }
+        else{
+            if(userBalance<result){
+                message.innerHTML='Недостаточно средств';
+                output.innerHTML=result+" p";
+            }
+            else if(userBalance>=result){
+                message.innerHTML='Оформление прошло успешно';
+                output.innerHTML=result+" p";
+            }
+        }
+    }   
+    </script>
+</head>
+<style>
+    td{
+       padding: 5px;
+    }
+    div{
+        display: inline-block;
+    }
+</style>
+<body>
+    <header> НГТУ, ФБ, Лабораторная работа</header>
+    <main>
+        <div style="margin-bottom: 15px ;">
+        Мой баланс: <input type="number" min="0" id="userBalans"><br>
+        </div>
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <td><b></b></td>
+                <td><b>Название</b></td>
+                <td><b>Цена</b></td>
+                <td><b>Количество</b></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Молоко</td>
+                <td>90 р</td>
+                <td width="40%"><input type="number" value="" id="numberA" ></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Хлеб белый</td>
+                <td>50 р</td>
+                <td width="40%"><input type="number" value="" id="numberB"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Масло, 200 гр</td>
+                <td>150 р</td>
+                <td><input type="number" value="" id="numberC" ></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td> Сметана</td>
+                <td>67 р</td>
+                <td><input type="number" value="" id="numberD" ></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Яблоки</td>
+                <td>100 р</td>
+                <td><input type="number" value="" id="numberE" ></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Яйца</td>
+                <td>85 р</td>
+                <td><input type="number" value="" id="numberF" ></td>   
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Мука</td>
+                <td>60 р</td>
+                <td><input type="number" value="" id="numberG" ></td>
+            </tr>
+        </table>
+        <input type="button" value="ОК" style="margin-top: 20px;" onclick="Sum()"><br>
+        <div class="sum">Итого:</div>
+        <div id="output"></div><br>
+        <div id="error" style="color: red; "></div> 
+    </main>
+    <footer> &copy;Милана Половко, ФБИ-21, 2 курс, 2024</footer>
+</body>
+</html>
