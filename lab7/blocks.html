@@ -18,12 +18,35 @@
             newBlock.style.width='50%';
             document.querySelector('main').appendChild(newBlock);
         }
+
+        function addNewBlocks(){
+            let main=document.querySelector('main');
+            let number=document.getElementById('Number');
+            let a=parseInt(number.value);
+            
+            for(let i=0;i<a;i++){
+                let newBlock=document.createElement('div');
+                newBlock.style.backgroundColor='green';
+                newBlock.style.height='40px';
+                newBlock.style.border='1px solid';
+                newBlock.style.margin='30px';
+                newBlock.style.width=(150+30*i)+'px';
+                newBlock.innerHTML=`Блок № ${i+1}: 2*${i}<sup>2</sup>=${2*i**2}`;
+
+                main.appendChild(newBlock);
+            }
+        }
     </script>
 </head>
 <body>
     <header> НГТУ, ФБ, Лабораторная работа</header>
     <main> 
+        <div style="margin-bottom: 15px ;">
+            Введите число: <input type="number" min="0" id="Number"><br>
+        </div>
         <button onclick="addNewBlock()">Добавить блок</button>
+        <button onclick="addNewBlocks()">Добавить блоки</button>
+
     </main>
     <footer> &copy;Милана Половко, ФБИ-21, 2 курс, 2024</footer>
 </body>
