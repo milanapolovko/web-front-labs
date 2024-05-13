@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Половко Милана Андреевна</title>
+    <link rel="stylesheet" href="../main.css"> 
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-32x32.png">
+    <link rel="icon" href="favicon-16x16.png">
+</head>
+<script>
+    function getEuroExchangeRate(){
+        const url='https://www.cbr-xml-daily.ru/daily_json.js';
+        fetch(url)
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(json){
+                const euroRate = json.Valute.EUR.Value;
+                const date = json.Date;
+                const prevEuroRate = json.Valute.EUR.Previous;
+                const diff = euroRate - prevEuroRate;
+
+                let table=document.getElementById('table');
+                let tr=document.createElement('tr');
+                let td1=document.createElement('td');
+                td1.innerText=`Текущий курс евро: ${euroRate.toFixed(2)}`;
+                tr.appendChild(td1);
+
+                let td2=document.createElement('td');
+                td2.innerText=`Дата запроса: ${date}`;
+                tr.appendChild(td2);
+                
+                let td3=document.createElement('td');
+                td3.innerText=`Курс за прошлую дату: ${prevEuroRate.toFixed(2)}`;
+                tr.appendChild(td3);
+
+                let td4=document.createElement('td');
+                td4.innerText=`Разница: ${diff.toFixed(2)}`;
+                tr.appendChild(td4);
+
+                let td5=document.createElement('td');
+                if(prevEuroRate>euroRate){
+                    td5.innerText=`Курс опустился`;
+                }
+                else{td5.innerText=`Курс поднялся`}; 
+                tr.appendChild(td5);
+                table.appendChild(tr);
+            });
+            document.getElementById('button').style.display='none'; 
+    }
+            
+</script>
+<body>
+    <header> НГТУ, ФБ, Лабораторная работа</header>
+    <main>
+        <button onclick="getEuroExchangeRate()" id="button">Получить курс евро</button>
+        <table border="1" id="table" style="margin: 10px;"></table>
+        Ссылка на ресурс: <a href="https://www.cbr-xml-daily.ru/">Курсы валют, API</a>
+    </main>
+    <footer> &copy;Милана Половко, ФБИ-21, 2 курс, 2024</footer>
+</body>
+</html>
