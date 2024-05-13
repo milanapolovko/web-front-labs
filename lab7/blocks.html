@@ -67,8 +67,23 @@
                 newBlock.style.lineHeight='60px';
                 newBlock.style.textAlign='center';
                 newBlock.style.display='inline-block';
-       
 
+                newBlock.innerHTML=`${i}`;
+
+                main.appendChild(newBlock);
+            }
+        }
+
+        function opacity(){
+            let main=document.querySelector('main');
+
+            for(let i=0;i<=10;i++){
+                let newBlock=document.createElement('div');
+                newBlock.style.backgroundColor='red';
+                newBlock.style.height='40px';
+                newBlock.style.border='1px solid';
+                newBlock.style.margin='30px';
+                newBlock.style.opacity=(0+10*i)+'%';
                 newBlock.innerHTML=`${i}`;
 
                 main.appendChild(newBlock);
@@ -85,7 +100,9 @@
         <button onclick="addNewBlock()">Добавить блок</button>
         <button onclick="addNewBlocks()">Добавить блоки</button>
         <button onclick="add20_50()">20=>50</button>
-        <button onclick="add10_80()">10=>-80</button><br>
+        <button onclick="add10_80()">10=>-80</button>
+        <button onclick="opacity()">Прозрачные блоки</button><br>
+
     </main>
     <footer> &copy;Милана Половко, ФБИ-21, 2 курс, 2024</footer>
 </body>
