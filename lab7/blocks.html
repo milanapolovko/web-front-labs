@@ -23,7 +23,7 @@
             let main=document.querySelector('main');
             let number=document.getElementById('Number');
             let a=parseInt(number.value);
-            
+
             for(let i=0;i<a;i++){
                 let newBlock=document.createElement('div');
                 newBlock.style.backgroundColor='green';
@@ -32,6 +32,23 @@
                 newBlock.style.margin='30px';
                 newBlock.style.width=(150+30*i)+'px';
                 newBlock.innerHTML=`Блок № ${i+1}: 2*${i}<sup>2</sup>=${2*i**2}`;
+
+                main.appendChild(newBlock);
+            }
+        }
+
+        function add20_50(){
+            let main=document.querySelector('main');
+            for(let i=20;i<=50;i+=2.5){
+                let newBlock=document.createElement('div');
+                newBlock.style.width='40px';
+                newBlock.style.border='1px solid';
+                newBlock.style.backgroundColor='pink';
+                newBlock.style.padding='10px';
+                newBlock.style.margin='30px';
+                newBlock.style.width='20%';
+
+                newBlock.innerHTML=`${i}`;
 
                 main.appendChild(newBlock);
             }
@@ -46,7 +63,7 @@
         </div>
         <button onclick="addNewBlock()">Добавить блок</button>
         <button onclick="addNewBlocks()">Добавить блоки</button>
-
+        <button onclick="add20_50()">20=>50</button>
     </main>
     <footer> &copy;Милана Половко, ФБИ-21, 2 курс, 2024</footer>
 </body>
