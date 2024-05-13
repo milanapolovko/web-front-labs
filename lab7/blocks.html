@@ -89,6 +89,33 @@
                 main.appendChild(newBlock);
             }
         }
+
+        function circles(){
+            let main=document.querySelector('main');
+            let number=document.getElementById('Number');
+            let a=parseInt(number.value);
+
+            for(let i=a;i>0;i--){
+                let newBlock=document.createElement('div');
+                newBlock.style.width='70px';
+                newBlock.style.height='70px';
+                newBlock.style.border='1px solid';
+                newBlock.style.borderRadius='50%';
+                newBlock.style.margin='10px';
+                newBlock.style.fontSize='20px';
+                newBlock.style.lineHeight='60px';
+                newBlock.style.textAlign='center';
+                newBlock.style.display='inline-block';
+                if(i%2==0){
+                    newBlock.style.backgroundColor='green';
+                }
+                else{newBlock.style.backgroundColor='red';}
+                newBlock.innerHTML=`${i}`;
+
+                main.appendChild(newBlock);
+            }
+        }
+
     </script>
 </head>
 <body>
@@ -101,8 +128,8 @@
         <button onclick="addNewBlocks()">Добавить блоки</button>
         <button onclick="add20_50()">20=>50</button>
         <button onclick="add10_80()">10=>-80</button>
-        <button onclick="opacity()">Прозрачные блоки</button><br>
-
+        <button onclick="opacity()">Прозрачные блоки</button>
+        <button onclick="circles()">Цветные круги</button><br>
     </main>
     <footer> &copy;Милана Половко, ФБИ-21, 2 курс, 2024</footer>
 </body>
