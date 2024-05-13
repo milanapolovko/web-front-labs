@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Половко Милана Андреевна</title>
+    <link rel="stylesheet" href="../main.css"> 
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-32x32.png">
+    <link rel="icon" href="favicon-16x16.png">
+<script>
+    function showExchange(){
+        const data=[
+            '27.04.2024','29.04.2024','30.04.2024','02.05.2024','03.05.2024','06.05.2024',
+            '07.05.2024','08.05.2024','10.05.2024'];
+        const exchange=[34.37,35.25,34.93,34.75,35.16,36.06,36.32,36.49,36.93];
+        const razn=[]
+        let table=document.getElementById('dollar-table');
+        for(let i=0;i<data.length;i++){
+            let tr=document.createElement('tr');
+            let td1=document.createElement('td');
+            td1.innerText=data[i];
+            tr.appendChild(td1);
+            
+            let td2=document.createElement('td');
+            td2.innerText=exchange[i];
+            tr.appendChild(td2);
+
+            let td3=document.createElement('td');
+            if(i==0){
+                td3.innerText='-';
+            }
+            else{ td3.innerText=exchange[i]-exchange[i-1];}
+            tr.appendChild(td3);
+            table.appendChild(tr);
+        }
+    let sum=0;
+    max=exchange[0];
+    min=exchange[0];
+    for(let i=0;i<exchange.length;i++){
+        sum+=exchange[i];
+        if(exchange[i]>max){
+            max=exchange[i];
+        }
+        if(exchange[i] < min){
+            min = exchange[i];
+        }
+    }
+    let average=sum/exchange.length;
+    average=average.toFixed(2);
+    document.getElementById('detail').innerHTML='Среднее значение: '+average;
+    document.getElementById('max').innerHTML='Максимальное значение: '+max;
+    document.getElementById('min').innerHTML='Минимальное значение: '+min;
+    document.getElementById('button').style.display='none'; 
+}
+</script>
+</head>
+<body>
+    <header> НГТУ, ФБ, Лабораторная работа</header>
+    <main>
+        <button onclick="showExchange()" id="button">Курс акций Сургутнефтегаз</button>
+        <table border="1" id="dollar-table" style="margin: 10px;"></table>
+        <div id="detail"></div>
+        <div id="max"></div>
+        <div id="min"></div>
+    </main>
+    <footer> &copy;Милана Половко, ФБИ-21, 2 курс, 2024</footer>
+</body>
+</html>
