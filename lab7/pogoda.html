@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Половко Милана Андреевна</title>
+    <link rel="stylesheet" href="../main.css"> 
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-32x32.png">
+    <link rel="icon" href="favicon-16x16.png">
+    <script>
+        function getEuroExchangeRate(){
+        const url='https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezone=Asia%2FBangkok';
+        fetch(url)
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(json){
+                const time = json.hourly.time;
+                const temper = json.hourly.temperature_2m;
+                
+                let table=document.getElementById('table');
+                let tr1=document.createElement('tr');
+                let td_1=document.createElement('td');
+                let td1=document.createElement('td');
+                td1.innerText=`Время: ${time[8]}`;
+                td_1.innerText=`Температура: ${temper[8]}`;
+                tr1.appendChild(td1);
+                tr1.appendChild(td_1);
+
+                let tr2=document.createElement('tr');
+                let td2=document.createElement('td');
+                let td_2=document.createElement('td');
+                td2.innerText=`Время: ${time[12]}`;
+                td_2.innerText=`Температура: ${temper[12]}`;
+                tr2.appendChild(td2);
+                tr2.appendChild(td_2);
+
+                let tr3=document.createElement('tr');
+                let td3=document.createElement('td');
+                let td_3=document.createElement('td');
+                td3.innerText=`Время: ${time[20]}`;
+                td_3.innerText=`Температура: ${temper[20]}`;
+                tr3.appendChild(td3);
+                tr3.appendChild(td_3);
+               
+                table.appendChild(tr1);
+                table.appendChild(tr2);
+                table.appendChild(tr3);
+            });
+            document.getElementById('button').style.display='none'; 
+        }
+    </script>
+</head>
+<body>
+    <header> НГТУ, ФБ, Лабораторная работа</header>
+    <main>
+        <button onclick="getEuroExchangeRate()" id="button">Показать погоду</button>
+        <table border="1" id="table" style="margin: 10px;"></table>
+    </main>
+    <footer> &copy;Милана Половко, ФБИ-21, 2 курс, 2024</footer>
+</body>
+</html>
