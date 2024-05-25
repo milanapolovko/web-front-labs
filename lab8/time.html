@@ -23,15 +23,19 @@
         font-size: 150px;
         top: 190px;
     }
+
 </style>
 <body onload="showTime()">
     <header> 
         НГТУ, ФБ, Лабораторная работа
-        <div id="time">00:00:00</div>
+        <div id="time1">00:00:00</div>
     </header>
 
-    <main>
-        <div id="time1">00:00:00</div>
+    <main onload="Clock()">
+        <div id="time2">00:00:00</div>
+
+        <div id="time" style=" width: 5px;height: 100px;background-color: rgb(7, 5, 104);
+            margin-left: auto; margin-right: auto;"></div>
     </main>
     <footer> &copy;Милана Половко, ФБИ-21, 2 курс, 2024</footer>
 
