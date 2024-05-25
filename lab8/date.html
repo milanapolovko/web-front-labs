@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Половко Милана Андреевна. Лабораторная работа 8</title>
+    <link rel="stylesheet" href="../main.css"> 
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-32x32.png">
+    <link rel="icon" href="favicon-16x16.png">
+    <script src="lab8.js"></script>
+</head>
+<style>
+    div{
+        font-size: 18px;
+        margin-left: 20px;
+        line-height: 26px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: rgb(94, 30, 111);
+    }
+    input{
+        margin: 5px;
+        text-align: left;
+        font-size: 15px;
+        padding: 5px;  
+        padding-left: 10px; 
+    }
+    button{
+        margin: 15px;
+        padding: 5px;
+        font-size: 15px;
+    }
+</style>
+<body onload="showDate()">
+    <header> НГТУ, ФБ, Лабораторная работа</header>
+    <main>
+        <div style="margin-top: 30px;" id="current-dateRU"></div>
+        <div id="current-dateSP"></div>
+        <div id="current-dateZH"></div>
+        <div id="current-dateEN"></div>
+        <div id="current-dateFR"></div>
+        <div id="current-dateAR"></div>
+
+        <div id="current-year" style="margin-top: 25px;"></div>
+        <div id="current-month"></div>
+        <div id="current-date"></div>
+        <div id="current-weekDay"></div>
+
+        <div>Год <input id="year" style="margin-top: 25px; margin-left: 30.2px;"></div>
+        <div>Месяц <input id="month"></div>
+        <div>Дата <input id="date" style=" margin-left: 19.3px;"></div>
+        <button id="bt"onclick="showDayofWeek()"> Определить день недели</button>
+        <div id="day"></div>
+    </main>
+    <footer> &copy;Милана Половко, ФБИ-21, 2 курс, 2024</footer>
+
+</body>
+</html>
