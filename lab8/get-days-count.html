@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Половко Милана Андреевна. Лабораторная работа 8</title>
+    <link rel="stylesheet" href="../main.css"> 
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-32x32.png">
+    <link rel="icon" href="favicon-16x16.png">
+    <script src="get-days-count.js"></script>
+</head>
+<style>
+    div{
+        margin: 20px;
+        font-size: 20px;
+    }
+    input{
+        padding: 8px;
+        margin-left: 5px;
+        font-size: 15px;
+        width: 150px;
+    }
+    button{
+        margin-right: 20px;
+        font-size: 15px;
+        padding: 5px;
+        font-weight: bold;
+        background-color: rgb(235, 246, 208) ;
+        color:rgb(36, 77, 159);
+        border-color: rgb(235, 246, 208);
+    }
+</style>
+<body>
+    <header> 
+        НГТУ, ФБ, Лабораторная работа
+    </header>
+
+    <main>
+        <div>
+            <label>Дата рождения: <input type="date"></label>
+        </div>
+        <div>
+            <button onclick="showDaysCount()">Показать число дней</button>
+            <button onclick="Delete()">Очистить</button>
+        </div>
+        <div id="date"></div>
+    </main>
+    <footer> &copy;Милана Половко, ФБИ-21, 2 курс, 2024</footer>
+
+</body>
+</html>
