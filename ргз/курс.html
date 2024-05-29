@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Московский кредитный банк</title>
+    <link rel="stylesheet" href="main.css"> 
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-32x32.png">
+    <link rel="icon" href="favicon-16x16.png">
+    <script>
+    
+        function getExchangeRate(){
+            const url='https://www.cbr-xml-daily.ru/daily_json.js';
+            fetch(url)
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(json){
+                const AEDRate = json.Valute.AED.Value;
+                const date = json.Date;
+                let table=document.getElementById('table');
+                let tr=document.createElement('tr');
+                let td1=document.createElement('td');
+                td1.innerText=`Текущий курс Дирхам ОАЭ: ${AEDRate.toFixed(2)}`;
+                tr.appendChild(td1);
+
+                let td2=document.createElement('td');
+                td2.innerText=`Дата: ${date}`;
+                tr.appendChild(td2);
+                table.appendChild(tr);});
+                document.getElementById('button').style.display='none'; 
+        }
+
+        function Look(){
+            const url='https://www.cbr-xml-daily.ru/daily_json.js';
+            fetch(url)
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(json){
+                const AEDRate = json.Valute.AED.Value;
+                let inputA=document.getElementById('number1');
+                let a=parseInt(inputA.value);
+                let output=document.getElementById('number2');
+                let result=a*(1/AEDRate);
+                output.innerText=result.toFixed(2);
+                
+            });
+        }
+
+        function Look_1(){
+            const url='https://www.cbr-xml-daily.ru/daily_json.js';
+            fetch(url)
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(json){
+                const AEDRate = json.Valute.AED.Value;
+                let inputB=document.getElementById('number3');
+                let b=parseInt(inputB.value);
+                let output_=document.getElementById('number4');
+                let result1=b*AEDRate;
+                output_.innerText=result1.toFixed(2);
+            });
+        }
+        
+    </script>
+</head>
+<style>
+
+    h2{
+        margin-top: 50px;
+        margin-left: 50px;
+       
+    }
+    button{
+        margin-top: 50px;
+        margin-left: 50px;
+        width: 40%;
+        height: 50px;
+        font-size: 20px;
+    }
+    .text{
+        text-align:justify;
+        top: 50px;
+        margin-bottom: 32px;
+        margin-left: 60px;
+    }
+    .kurs{
+        border: 1px solid gainsboro;
+        border-radius: 10px;
+        background-color: gainsboro;
+        display: inline-block;
+        text-align: left;
+        margin-top: 20px;
+        margin-left: 80px;
+        width: 30%;
+        height: 100px;
+        padding: 5px;
+    }
+    .kurs_{
+        border: 1px solid gainsboro;
+        border-radius: 10px;
+        background-color: gainsboro;
+        position:relative;
+        left: 50%;
+        top: -135px;
+        text-align: left;
+        margin-top: 20px;
+        margin-left: 80px;
+        width: 30%;
+        height: 102px;
+        padding: 5px;
+   
+    }
+    p{
+        margin-left: 15px;
+        color: rgb(210, 14, 14);
+        font-weight: 700;
+    }
+    .tb{
+        margin-top: 30px;
+        margin-left: 50px;
+        padding: 10px;
+        border-collapse: collapse; 
+    }
+    .arrow{
+        width: 5%;
+        margin-left: 80px;
+    }
+    .n{
+        border: 1px solid rgb(255, 255, 255);
+        background-color: rgb(255, 255, 255);
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 15px;
+        margin-left: 10px;
+        width: 85%;
+        height: 19px;
+    }
+    input{
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 15px;
+        margin-left: 10px;
+        width: 85%;
+    }
+    table.tb td{
+        border:2px solid;
+        padding: 10px;
+    }
+    .m{
+        margin-bottom: -70px;
+    }
+</style>
+<body>
+    <header> 
+        <div class="menu">
+            <img src="logo-new.png" alt="" width="96" height="31" style="margin-left: 35px;">
+            <ul>
+                <a href="о компании.html"><b>О компании</b></a><br>
+                <a href="новости.html"><b>Новости</b></a><br>
+                <a href="курс.html"><b>Курс валют</b></a><br>
+                <a href="контактные_данные.html"><b>Контактные данные</b></a><br>
+                <a href="видео.html"><b>Видео</b></a>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <h2>Текущий курс Дирхам ОАЭ</h2>
+        <button onclick="getExchangeRate()" id="button">Получить курс Дирхам ОАЭ</button>
+   
+        <table class="tb" id="table"></table>
+  
+        <h2>Калькулятор курса</h2>
+        <div class="m">
+            <div class="kurs">
+                <p>RUB</p>
+                <input type="number" value="" min="0" id="number1">
+            </div>
+
+            <img src="стрелка_вправо.png" class="arrow" onclick="Look()">
+
+            <div class="kurs_">
+                <p>AED</p>
+                <div class="n" id="number2"></div>
+            </div>
+        </div>
+        <div class="m">
+            <div class="kurs">
+                <p>AED</p>
+                <input type="number" value="" min="0" id="number3">
+            </div>
+
+            <img src="стрелка_вправо.png" class="arrow" onclick="Look_1()">
+
+            <div class="kurs_">
+                <p>RUB</p>
+                <div class="n" id="number4">  </div>
+            </div>
+     </div>
+        <div class="text"> Ссылка на ресурс: <a href="https://www.cbr-xml-daily.ru/">Курсы валют, API</a></div>
+    </main>
+
+    <footer></footer>
+
+</body>
+</html>
